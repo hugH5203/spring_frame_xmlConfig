@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:comtex="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--beans标签的声明里，xsi是识别各个声明的，因为网址后面有instance实例化的意思。
+    comtex是识别comtex标签的，aop是声明要启用解析aop的，context是声明用启用注解的，tx是声明要启用事务管理器的。
+    其中除了xsi与comtex,其他的都要在schemaLocation里配两个，不为什么，因为spring的xml约束是这么规定的，不按约束来就报错-->
+
+   <!--写在xml代码里面的数据源，写死了-->
+ <!--  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/eesy_mybatis"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="123"></property>
+    </bean>-->
+
+    <!--告知spring在创建容器时要扫描的包，一般用于注解与xml一起用时。如果要用纯注解可以不配置这个，用而是用一个叫configuration的注解-->
+    <!--context:component-scan base-package="in2021winter.huanghai"></context:component-scan-->
+
+    <!--开启注解aop的支持（非纯注解）,在bean.xml中声明，纯注解可以不用-->
+  <!--  <aop:aspectj-autoproxy></aop:aspectj-autoproxy>-->
+
+    <!--开启注解方法实现依赖注入即DI（半注解使用方法）,注解方式依赖注入可以不需要set方法-->
+<!--    <context:annotation-config/>-->
+
+
+<!--将数据源的参数写在类路径下的配置文件里，改参数只需要到配置文件里改，就不需要改源码了。那些红的不知道为什么变红了，但是不影响使用，好像spring还是能识别。-->
+    <comtex:property-placeholder location="classpath:jdbcConfig.properties"></comtex:property-placeholder>
+
+    <bean id="dataSource" class="${jdbc.dataSource}">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url"  value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+
+    <!--<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" scope="prototype">  &lt;!&ndash;将这个工具类设为多例对象，才不会有线程安全问题&ndash;&gt;
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>-->
+
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype"></bean>
+
+    <bean id="user" class="in2021winter.huanghai.domain.User"></bean>
+
+    <bean id="userDao" class="in2021winter.huanghai.daoImpl.UserDao">
+        <!--用teardLocal中的connection，不需要去数据源的连接池中获取了<property name="dataSource" ref="dataSource"></property>-->
+        <!--<property name="template" ref="jdbcTemplate"></property>-->
+        <property name="runner" ref="runner"></property>
+        <property name="con" ref="connection"></property>
+    </bean>
+
+    <bean id="userService" class="in2021winter.huanghai.serviceImpl.UserService">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+
+    <bean id="connection" class="in2021winter.huanghai.utils.ConnectionUtils">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <bean id="transManager" class="in2021winter.huanghai.utils.TransActionManager">
+        <property name="connectionUtils" ref="connection"></property>
+    </bean>
+    <!--配置切面AOP，将要增强的代码方法，织入被代理方法中-->
+    <!--一旦开启该配置，所有getBean方法中传入的参数id在表达式范围内的对象，都会变成spring配置的动态代理的形式-->
+<!--    <aop:config>
+        &lt;!&ndash;切入点表达式
+        expression属性为指定表达式内容
+        此标签写在aop:aspect标签内就只能在当前切面内使用如果写在aspect外，config内就可以所有切面用&ndash;&gt;
+        <aop:pointcut id="pt" expression="execution(* in2021winter.huanghai.serviceImpl.*.*(..))"></aop:pointcut>
+        &lt;!&ndash;配置切面&ndash;&gt;
+        <aop:aspect id="theProxyService" ref="transManager">
+            &lt;!&ndash;前置通知&ndash;&gt;
+            <aop:before method="beginTransAction" pointcut-ref="pt"></aop:before>
+            &lt;!&ndash;后置通知&ndash;&gt;
+            <aop:after-returning method="commit" pointcut-ref="pt"></aop:after-returning>
+            &lt;!&ndash;异常通知&ndash;&gt;
+            <aop:after-throwing method="rollBack" pointcut-ref="pt"></aop:after-throwing>
+            &lt;!&ndash;最终通知&ndash;&gt;
+            <aop:after method="release" pointcut-ref="pt"></aop:after>
+        </aop:aspect>
+    </aop:config>-->
+
+
+    <!--这种方式一般用于遇到jar包时使用，因为jar包既不适用set方式依赖注入也不适合构造函数注入-->
+    <!--手动写写基于接口的动态代理-->
+    <bean id="proxyService" factory-bean="BeanFactory" factory-method="getService"></bean>
+
+    <bean id="BeanFactory" class="in2021winter.huanghai.factory.BeanFactory">
+        <property name="trans" ref="transManager"></property>
+    <property name="service" ref="userService"></property>
+    </bean>
+
+    <!--开启spring中事务管理器对注解的支持，之前配置的事务安全是由aop配置实现的，算是手动把提交回滚等方法加入增强的方法中，
+    但其实spring自己封装了对事务安全的一套api，就在事务管理器里-->
+ <!--   <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+
+  &lt;!&ndash;  配置spring的事务管理器&ndash;&gt;
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    &lt;!&ndash;配置事务的通知,并将它和事务管理器连接起来&ndash;&gt;
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        &lt;!&ndash;事务的属性：
+        isolation:用于指定事务的隔离级别，默认级别是DEFAULT,表示使用默认的隔离级别
+        propagation:指定事务的传播方式，默认是REQUITED,表示一定会有事务，会自动设置提交方式为false，会有commit方法，增删改用这个。查询用SUPPORTS
+        read-only:用于指定事务是否为只读方式，只有查询才能设置为true，默认值为false即可读写
+        timeout:用于指定事务的超时时间，默认值-1，表示永不超时。设置了则以秒做单位
+        rollback-for:指定一个异常，产生它时才会回滚，没有默认值，不设置则任何异常都回滚
+        no-rollback-for:和上一个刚好相反
+        method属性中的name的值为*表示任何方应用于任何方法，find*表示应用于find开头的任何方法，后者优先级大于前者&ndash;&gt;
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED" read-only="false" rollback-for="Exception"></tx:method>
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true"></tx:method>
+        </tx:attributes>
+    </tx:advice>
+    &lt;!&ndash;配置aop，spring的事务管理器也是用aop搞进去的&ndash;&gt;
+    <aop:config>
+        &lt;!&ndash;配置切入点表达式,表达式中最前面的空格与后面的要有一个空格&ndash;&gt;
+        <aop:pointcut id="pt2" expression="execution(* in2021winter.huanghai.serviceImpl.*.*(..))"/>
+        &lt;!&ndash;将切入点表达式与事务通知建立对应关系&ndash;&gt;
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pt2"></aop:advisor>
+    </aop:config>
+
+    <aop:aspectj-autoproxy  proxy-target-class="true"/>-->
+</beans>

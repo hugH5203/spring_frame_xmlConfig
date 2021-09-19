@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="07e92544-f192-4caf-87b2-98b3d4f0a647" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\apache-my_maven_repository" />
+        <option name="mavenHome" value="C:/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="C:\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1o5aOJMnVV80KmqFO500fj9p4RE" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/in2021winter/huanghai/annotation/AnnotationDao" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="spring" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="in2021winter.huanghai.annotation.annotionFacfory" />
+      <recent name="in2021winter.huanghai.annotation.annotationDomain" />
+      <recent name="in2021winter.huanghai.annotation.annotationService" />
+      <recent name="in2021winter.huanghai.annotation.AnnotationDao" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\IntelliJ IDEA 2019.3.3\idealProject\spring\src\main\java\in2021winter\huanghai\annotation\AnnotationDao" />
+      <recent name="C:\IntelliJ IDEA 2019.3.3\idealProject\spring\src\main\java\in2021winter\huanghai\annotation\annotationUtils" />
+      <recent name="C:\IntelliJ IDEA 2019.3.3\idealProject\spring\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ServiceTest.testService">
+    <configuration name="AppTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring" />
+      <option name="PACKAGE_NAME" value="in2021winter.huanghai" />
+      <option name="MAIN_CLASS_NAME" value="in2021winter.huanghai.AppTest" />
+      <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JunitWithSpring.testSpringTransManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring" />
+      <option name="PACKAGE_NAME" value="in2021winter.huanghai.test" />
+      <option name="MAIN_CLASS_NAME" value="in2021winter.huanghai.test.JunitWithSpring" />
+      <option name="METHOD_NAME" value="testSpringTransManager" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.testService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring" />
+      <option name="PACKAGE_NAME" value="in2021winter.huanghai.test" />
+      <option name="MAIN_CLASS_NAME" value="in2021winter.huanghai.test.ServiceTest" />
+      <option name="METHOD_NAME" value="testService" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.testSpringAutoProxy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring" />
+      <option name="PACKAGE_NAME" value="in2021winter.huanghai.test" />
+      <option name="MAIN_CLASS_NAME" value="in2021winter.huanghai.test.ServiceTest" />
+      <option name="METHOD_NAME" value="testSpringAutoProxy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.testTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring" />
+      <option name="PACKAGE_NAME" value="in2021winter.huanghai.test" />
+      <option name="MAIN_CLASS_NAME" value="in2021winter.huanghai.test.ServiceTest" />
+      <option name="METHOD_NAME" value="testTransfer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ServiceTest.testService" />
+        <item itemvalue="JUnit.JunitWithSpring.testSpringTransManager" />
+        <item itemvalue="JUnit.ServiceTest.testTransfer" />
+        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
+        <item itemvalue="JUnit.ServiceTest.testSpringAutoProxy" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpringGeneralSettings">
+    <option name="allowAutoConfigurationMode" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="91" key="#Inspections" timestamp="1612676646312">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="91" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1612676646312" />
+    <state x="361" y="91" key="#Notifications" timestamp="1612676605814">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="91" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1612676605814" />
+    <state x="361" y="91" key="#Project_Structure" timestamp="1612618875796">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="91" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1612618875796" />
+    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1612697346096">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1612697346096" />
+    <state x="389" y="110" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1612676823733">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="389" y="110" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.864@0.0.1536.864" timestamp="1612676823733" />
+    <state x="416" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1612701668504">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="416" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1612701668504" />
+    <state width="1493" height="409" key="GridCell.Tab.0.bottom" timestamp="1618643784209">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="409" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1618643784209" />
+    <state width="1493" height="409" key="GridCell.Tab.0.center" timestamp="1618643784209">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="409" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1618643784209" />
+    <state width="1493" height="409" key="GridCell.Tab.0.left" timestamp="1618643784209">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="409" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1618643784209" />
+    <state width="1493" height="409" key="GridCell.Tab.0.right" timestamp="1618643784209">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="409" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1618643784209" />
+    <state width="1493" height="411" key="GridCell.Tab.1.bottom" timestamp="1612712751203">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="411" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1612712751203" />
+    <state width="1493" height="411" key="GridCell.Tab.1.center" timestamp="1612712751203">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="411" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1612712751203" />
+    <state width="1493" height="411" key="GridCell.Tab.1.left" timestamp="1612712751203">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="411" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1612712751203" />
+    <state width="1493" height="411" key="GridCell.Tab.1.right" timestamp="1612712751203">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="411" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1612712751203" />
+    <state x="270" y="74" key="SettingsEditor" timestamp="1612792113157">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="270" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1612792113157" />
+    <state x="449" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1614150223360">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="449" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1614150223360" />
+    <state x="178" y="127" key="new project wizard" timestamp="1612702934852">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="178" y="127" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1612702934852" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1612794859886">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1612794859886" />
+    <state x="449" y="115" key="spring file set editor" timestamp="1612676926093">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="449" y="115" key="spring file set editor/0.0.1536.864@0.0.1536.864" timestamp="1612676926093" />
+  </component>
+</project>
